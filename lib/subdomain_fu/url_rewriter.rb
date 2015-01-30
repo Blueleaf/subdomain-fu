@@ -4,7 +4,7 @@ module ActionDispatch
   module Routing
     class RouteSet #:nodoc:
       def url_for_with_subdomains(options, path_segments=nil)
-        if SubdomainFu.needs_rewrite?(options[:subdomain], (options[:host] || @request.host_with_port)) || options[:only_path] == false
+        if options[:only_path] == false && SubdomainFu.needs_rewrite?(options[:subdomain], (options[:host] || @request.host_with_port))
           options[:only_path] = false if SubdomainFu.override_only_path?
           options[:host] = SubdomainFu.rewrite_host_for_subdomains(options.delete(:subdomain), options[:host] || @request.host_with_port)
           # puts "options[:host]: #{options[:host].inspect}"
