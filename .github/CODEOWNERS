@@ -1,0 +1,14 @@
+# Code Ownership Configuration
+# This file defines code ownership for automated review assignment
+# Documentation: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Terraform files
+*.tf @Blueleaf/sre-team
+*.tfvars @Blueleaf/sre-team
+*.tfstate @Blueleaf/sre-team
+**/terraform/ @Blueleaf/sre-team
+**/.terraform/ @Blueleaf/sre-team
+
+# GitHub Workflows
+.github/workflows/ @Blueleaf/sre-team
+.github/actions/ @Blueleaf/sre-team
